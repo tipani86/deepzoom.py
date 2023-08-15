@@ -441,7 +441,8 @@ class ImageCreator(object):
                 tile_path = os.path.join(level_dir, "%s_%s.%s" % (column, row, format))
                 if self.descriptor.tile_format == "jpg":
                     jpeg_quality = int(self.image_quality * 100)
-                    tile.save(tile_path, "JPEG", quality=jpeg_quality)
+                    # Save in WEBP format but as a .jpg file
+                    tile.save(tile_path, "WEBP", quality=jpeg_quality)
                 else:
                     tile.save(tile_path)
         # Create descriptor
